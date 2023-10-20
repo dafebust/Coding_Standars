@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+	<module name="Header">
+		<property name="header"
+			value="// Copyright (C) 2020\n// All rights reserved" />
+	</module>
+	<module name="TreeWalker">
+		<module name="LocalVariableName">
+			<property name="format" value="^[a-z](_?[a-zA-Z0-9]+)*$" />
+		</module>
+		<module name="MissingJavadocMethod ">
+			<property name="scope" value="private" />
+			<property name="allowMissingPropertyJavadoc" value="true" />
+		</module>
+		<module name="JavadocType">
+			<property name="authorFormat" value="\S" />
+		</module>
+		
+		<!-- First Added -->
+		<module name="JavadocMethod">
+			<property name="scope" value="public"/>
+			<property name="allowMissingJavadoc" value="false"/>
+		</module>
+		
+		<!-- Second Added -->
+		<module name="MethodName">
+			<property name="format" value="^[a-z][_a-zA-Z0-9]*$"/>
+		</module>
+  		
+    	<!-- Third Added -->
+		<module name="WhitespaceAfter">
+			<property name="tokens" value="COMMA,SEMI"/>
+		</module>
+    	 
+    	<!-- Fourth Added -->
+    	<module name="PackageName">
+			<property name="format" value="^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)*$"/>
+		</module>
+    	
+    	<!-- Fifth Added -->
+    	<module name="WhitespaceAround">
+			<property name="tokens" value="EQUAL"/>
+		</module>
+    	
+    	<!-- Sixth Added -->
+    	<module name="FileTabCharacter">
+			<property name="eachLine" value="true"/>
+		</module>
+		
+		<!-- Custom rule to check the number of travelers -->
+		<module name="custom.checkstyle.NumberOfTravelersCheck">
+			<property name="maxTravelers" value="80"/>
+		</module>
+	</module>
+</module>
